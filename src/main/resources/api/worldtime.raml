@@ -1,0 +1,45 @@
+#%RAML 1.0
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/c27cb9ca-5926-4532-85b2-9dd73ae2262d/ # 
+title: worldtime
+
+/worldtime/{region}/{location}:
+  displayName: Mainframe routines executions API
+  uriParameters:
+      region:
+        type: string
+        example: Asia
+      location:
+        type: string
+        example: Kolkata  
+  post:
+    description:
+    body:
+      application/json:
+        type: object
+        
+    responses:
+      200:
+        body:
+          application/json:
+            type: object 
+            example:
+              {
+                "abbreviation": "IST",
+                "client_ip": "165.225.216.217",
+                "datetime": "2020-09-22T21:57:02.111331+05:30",
+                "day_of_week": 2,
+                "day_of_year": 266,
+                "dst": false,
+                "dst_from": null,
+                "dst_offset": 0,
+                "dst_until": null,
+                "raw_offset": 19800,
+                "timezone": "Asia/Kolkata",
+                "unixtime": 1600792022,
+                "utc_datetime": "2020-09-22T16:27:02.111331+00:00",
+                "utc_offset": "+05:30",
+                "week_number": 39
+              }
+      404:
+        body:
+          application/json:
